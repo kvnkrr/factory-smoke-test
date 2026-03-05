@@ -1,0 +1,81 @@
+{
+  "contract_version": 2,
+  "run_id": "002",
+  "spec_version": "1.1",
+  "repo": "https://github.com/kvnkrr/factory-smoke-test",
+  "started_at": "2026-03-05T19:26:57.843Z",
+  "status": "RUNNING",
+  "stages": [
+    {
+      "name": "workspace",
+      "status": "COMPLETE",
+      "ended_at": "2026-03-05T19:26:57.844Z"
+    },
+    {
+      "name": "delta",
+      "status": "COMPLETE",
+      "ended_at": "2026-03-05T19:26:57.844Z",
+      "result": {
+        "new": 0,
+        "modified": 0,
+        "removed": 0,
+        "unchanged": 46
+      }
+    },
+    {
+      "name": "state",
+      "status": "COMPLETE",
+      "ended_at": "2026-03-05T19:26:57.844Z"
+    },
+    {
+      "name": "intake",
+      "status": "COMPLETE",
+      "started_at": "2026-03-05T19:26:57.846Z",
+      "ended_at": "2026-03-05T19:27:22.081Z",
+      "duration_ms": 24235,
+      "issues_created": 0
+    },
+    {
+      "name": "build",
+      "status": "COMPLETE",
+      "tasks": [],
+      "progress": "0/0",
+      "started_at": "2026-03-05T19:27:22.081Z",
+      "ended_at": "2026-03-05T19:27:22.525Z",
+      "duration_ms": 444
+    },
+    {
+      "name": "design",
+      "status": "COMPLETE",
+      "started_at": "2026-03-05T19:27:22.527Z",
+      "ended_at": "2026-03-05T19:27:42.202Z",
+      "duration_ms": 19675
+    },
+    {
+      "name": "install",
+      "status": "COMPLETE",
+      "started_at": "2026-03-05T19:27:42.202Z",
+      "ended_at": "2026-03-05T19:27:43.388Z",
+      "duration_ms": 1186
+    },
+    {
+      "name": "test",
+      "status": "COMPLETE",
+      "started_at": "2026-03-05T19:27:43.389Z",
+      "ended_at": "2026-03-05T19:27:44.204Z",
+      "duration_ms": 815
+    },
+    {
+      "name": "inspect",
+      "status": "COMPLETE",
+      "started_at": "2026-03-05T19:27:44.205Z",
+      "ended_at": "2026-03-05T19:28:45.584Z",
+      "duration_ms": 61379
+    },
+    {
+      "name": "release",
+      "status": "RUNNING",
+      "started_at": "2026-03-05T19:28:45.864Z"
+    }
+  ]
+}
