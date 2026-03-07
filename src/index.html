@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Layout */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 0 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Form: Input and Add button */
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* List: Vertical layout */
+    ul {
+      list-style: none;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Item: Text and Delete button */
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li span {
+      color: #333;
+      word-break: break-word;
+    }
+
+    button.delete {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+
+    button.delete:hover {
+      background-color: #c82333;
+    }
+
+    /* Empty state */
+    .empty {
+      text-align: center;
+      color: #999;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo App</h1>
+
+  <!-- Input and Add button -->
+  <form id="todo-form">
+    <input type="text" id="todo-input" placeholder="Enter a new todo..." required>
+    <button type="submit">Add</button>
+  </form>
+
+  <!-- Vertical list -->
+  <ul id="todo-list"></ul>
+
+  <script>
+    // State: In-memory only
+    const todos = [];
+    let nextId = 1;
+
+    // DOM Elements
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const list = document.getElementById('todo-list');
+
+    // Add todo
+    function addTodo(text) {
+      todos.push({ id: nextId++, text });
+      render();
+    }
+
+    // Remove todo
+    function removeTodo(id) {
+      const index = todos.findIndex(todo => todo.id === id);
+      if (index !== -1) {
+        todos.splice(index, 1);
+        render();
+      }
+    }
+
+    // Render: Full re-render on state change
+    function render() {
+      list.innerHTML = '';
+
+      if (todos.length === 0) {
+        const empty = document.createElement('li');
+        empty.className = 'empty';
+        empty.textContent = 'No todos yet. Add one above!';
+        list.appendChild(empty);
+        return;
+      }
+
+      todos.forEach(todo => {
+        // Safe DOM creation (XSS prevention via textContent)
+        const li = document.createElement('li');
+
+        const span = document.createElement('span');
+        span.textContent = todo.text; // Safe: escapes HTML
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = () => removeTodo(todo.id);
+
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        list.appendChild(li);
+      });
+    }
+
+    // Event: Form submission
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const text = input.value.trim();
+      if (text) {
+        addTodo(text);
+        input.value = '';
+      }
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

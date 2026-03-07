@@ -1,0 +1,137 @@
+{
+  "contract_version": 3,
+  "run_id": "001",
+  "spec_version": "1.0",
+  "repo": "https://github.com/kvnkrr/factory-smoke-test.git",
+  "started_at": "2026-03-07T01:53:47.356Z",
+  "status": "RUNNING",
+  "phases": [
+    {
+      "name": "spec_analysis",
+      "agent": "product_manager",
+      "status": "COMPLETE",
+      "gate": "A",
+      "started_at": "2026-03-07T01:53:47.359Z",
+      "ended_at": "2026-03-07T01:55:28.379Z",
+      "duration_ms": 101020
+    },
+    {
+      "name": "planning",
+      "agent": "product_manager",
+      "status": "COMPLETE",
+      "gate": "B",
+      "started_at": "2026-03-07T01:55:29.030Z",
+      "ended_at": "2026-03-07T01:56:43.132Z",
+      "duration_ms": 74102
+    },
+    {
+      "name": "architecture",
+      "agent": "engineer_a",
+      "status": "COMPLETE",
+      "gate": "C",
+      "started_at": "2026-03-07T01:57:07.488Z",
+      "ended_at": "2026-03-07T01:59:04.106Z",
+      "duration_ms": 116618
+    },
+    {
+      "name": "ux",
+      "agent": "ux_designer",
+      "status": "COMPLETE",
+      "gate": null,
+      "started_at": "2026-03-07T01:59:21.361Z",
+      "ended_at": "2026-03-07T02:00:18.680Z",
+      "duration_ms": 57319
+    },
+    {
+      "name": "implementation",
+      "agent": "engineer_a",
+      "status": "COMPLETE",
+      "gate": "D",
+      "tasks": [
+        {
+          "id": "task-001",
+          "type": "NEW",
+          "description": "Todo App — Version: 1.0; Status: MVP",
+          "status": "COMPLETE"
+        },
+        {
+          "id": "task-002",
+          "type": "NEW",
+          "description": "1. Purpose — A minimal todo application used for Autonomous Factory end-to-end regression testing.; The factory building this app exercises all 9 phases: spec analysis, planning,; architecture, UX, implementation, review, security, production, and final checks.",
+          "status": "COMPLETE"
+        },
+        {
+          "id": "task-003",
+          "type": "NEW",
+          "description": "FR1 – Single Page Application — REQ-001: The app must consist of a single index.html file with inline CSS and JavaScript; REQ-002: The page must be openable directly in a browser via file:// or a static server with zero external dependencies",
+          "status": "COMPLETE"
+        },
+        {
+          "id": "task-004",
+          "type": "NEW",
+          "description": "FR2 – Todo List — REQ-003: The page must display a text input and an \"Add\" button that appends the entered text as a new item to a list below; REQ-004: Each item in the list must display its text and a \"Delete\" button that removes it; REQ-005: The list must be displayed as a vertical list of items using HTML and CSS",
+          "status": "COMPLETE"
+        },
+        {
+          "id": "task-005",
+          "type": "NEW",
+          "description": "3. Package Manifest — The app must have a valid package.json with:; name: \"factory-smoke-test\"; A \"test\" script that exits 0; Zero runtime dependencies",
+          "status": "COMPLETE"
+        },
+        {
+          "id": "task-006",
+          "type": "NEW",
+          "description": "4. Acceptance Criteria — The app is complete when opening index.html shows an input, an Add button, items can be added and deleted, and npm test exits with code 0.",
+          "status": "COMPLETE"
+        }
+      ],
+      "progress": "6/6",
+      "started_at": "2026-03-07T02:00:18.681Z",
+      "ended_at": "2026-03-07T02:04:36.640Z",
+      "duration_ms": 257959
+    },
+    {
+      "name": "review",
+      "agent": "engineer_b",
+      "status": "COMPLETE",
+      "gate": "E",
+      "started_at": "2026-03-07T02:04:37.295Z",
+      "ended_at": "2026-03-07T02:06:42.936Z",
+      "duration_ms": 125641
+    },
+    {
+      "name": "security",
+      "agent": "serena",
+      "status": "COMPLETE",
+      "gate": "F",
+      "started_at": "2026-03-07T02:06:59.256Z",
+      "ended_at": "2026-03-07T02:10:02.900Z",
+      "duration_ms": 183644
+    },
+    {
+      "name": "production",
+      "agent": "omar",
+      "status": "COMPLETE",
+      "gate": "G",
+      "started_at": "2026-03-07T02:10:03.593Z",
+      "ended_at": "2026-03-07T02:12:49.784Z",
+      "duration_ms": 166191
+    },
+    {
+      "name": "final_checks",
+      "agent": "product_manager",
+      "status": "COMPLETE",
+      "gate": "H",
+      "started_at": "2026-03-07T02:12:50.449Z",
+      "ended_at": "2026-03-07T02:15:26.725Z",
+      "duration_ms": 156276
+    },
+    {
+      "name": "complete",
+      "agent": null,
+      "status": "RUNNING",
+      "gate": null,
+      "started_at": "2026-03-07T02:15:44.734Z"
+    }
+  ]
+}
